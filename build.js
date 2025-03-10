@@ -21,6 +21,15 @@ fs.copyFileSync(
   path.join(distDir, 'index.html')
 );
 
+// Add this to your build.js file after the copying files section
+console.log('Ensuring index.html is in the root directory...');
+if (fs.existsSync(path.join(distDir, 'templates', 'index.html'))) {
+  fs.copyFileSync(
+    path.join(distDir, 'templates', 'index.html'),
+    path.join(distDir, 'index.html')
+  );
+}
+
 // Process HTML files
 console.log('Processing HTML files...');
 processDirectory(distDir, '.html', (filePath, content) => {
@@ -45,32 +54,44 @@ processDirectory(distDir, '.js', (filePath, content) => {
 
 // Add analytics script to all HTML files
 console.log('Adding analytics...');
-processDirectory(distDir, '.html', (filePath, content) => {
-  const analyticsScript = `
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-MEASUREMENT_ID');
-    </script>
-  `;
-  
-  return content.replace('</head>', `${analyticsScript}</head>`);
-});
+// processDirectory(distDir, '.html', (filePath, content) => {
+//   const analyticsScript = `
+//     <!-- Google Analytics -->
+//     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
+//     <script>
+//       window.dataLayer = window.dataLayer || [];
+//       function gtag(){dataLayer.push(arguments);}
+//       gtag('js', new Date());
+//       gtag('config', 'G-MEASUREMENT_ID');
+//     </script>
+//   `;
+//   
+//   return content.replace('</head>', `${analyticsScript}</head>`);
+// });
 
 // Create netlify.toml
 console.log('Creating Netlify configuration...');
 fs.writeFileSync(
   path.join(__dirname, 'netlify.toml'),
   `[build]
+  command = "npm run build"
   publish = "dist"
 
+# Handle routing for single-page application
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Remove the Content-Security-Policy header that might be causing issues
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Remove the CSP header that might be causing issues
 `
 );
 

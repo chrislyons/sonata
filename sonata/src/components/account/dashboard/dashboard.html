@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonata - User Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- If you have a favicon -->
+  <!-- <link rel="icon" href="favicon.ico"> -->
+  <!-- Font imports if needed -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Left sidebar -->
+    <div class="sidebar">
+      <!-- Logo -->
+      <div class="logo-container">
+        <h1 class="logo">Sonata</h1>
+      </div>
+      
+      <!-- User profile section -->
+      <div class="user-profile">
+        <div class="user-avatar">
+          <span class="user-initials">J</span>
+        </div>
+        <h2 class="user-name">John Smith</h2>
+      </div>
+      
+      <!-- Menu items -->
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item active">Dashboard</a>
+        <a href="my-songs.html" class="nav-item">My Songs</a>
+        <a href="create-song.html" class="nav-item">Create New</a>
+        <a href="song-library.html" class="nav-item">Song Library</a>
+        <a href="account-settings.html" class="nav-item">Account Settings</a>
+        <a href="help-support.html" class="nav-item">Help & Support</a>
+      </nav>
+      
+      <!-- Sign out at bottom -->
+      <div class="sign-out-container">
+        <a href="logout.html" class="sign-out-link">Sign Out</a>
+      </div>
+    </div>
+    
+    <!-- Main content area -->
+    <div class="main-content">
+      <!-- Top navigation -->
+      <header class="dashboard-header">
+        <!-- Search -->
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="search-input"
+            id="search-input"
+          />
+          <button id="search-clear-button" class="search-clear-button" style="display: none;">
+            ✕
+          </button>
+        </div>
+        
+        <div class="header-actions">
+          <!-- Notification -->
+          <button class="icon-button notification-icon">
+            🔔
+          </button>
+          
+          <!-- Help -->
+          <button class="icon-button help-icon">
+            ❓
+          </button>
+        </div>
+      </header>
+      
+      <!-- Main content -->
+      <main class="dashboard-main">
+        <!-- Welcome section -->
+        <div class="welcome-section">
+          <div>
+            <h1 class="welcome-heading">Welcome back, John</h1>
+            <p class="welcome-subheading">Here's what's happening with your songs</p>
+          </div>
+          
+          <a href="create-song.html" class="new-song-button">
+            New Song
+          </a>
+        </div>
+        
+        <!-- Stats cards -->
+        <div class="stats-container">
+          <div class="stats-card">
+            <h3 class="stats-label">Total Songs</h3>
+            <p class="stats-value">3</p>
+          </div>
+          
+          <div class="stats-card">
+            <h3 class="stats-label">In Progress</h3>
+            <p class="stats-value">1</p>
+          </div>
+          
+          <div class="stats-card">
+            <h3 class="stats-label">Completed</h3>
+            <p class="stats-value">2</p>
+          </div>
+        </div>
+        
+        <!-- Songs section -->
+        <div class="songs-header">
+          <h2 class="songs-heading">Your Songs</h2>
+          
+          <!-- Filter dropdown -->
+          <div class="filter-container">
+            <select id="songs-filter" class="filter-dropdown">
+              <option>All Songs</option>
+              <option>Completed</option>
+              <option>In Progress</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Song cards container -->
+        <div class="song-list" id="song-list">
+          <!-- Song Card 1: Completed -->
+          <div class="song-card">
+            <div class="song-card-content">
+              <!-- Status indicator -->
+              <div class="status-indicator status-completed"></div>
+              
+              <!-- Song info -->
+              <div class="song-info">
+                <h3 class="song-title">Birthday Song for Mom</h3>
+                <p class="song-metadata">Country • 2:45 minutes</p>
+                <p class="song-order-date">Ordered: February 10, 2025</p>
+                
+                <!-- Progress bar -->
+                <div class="progress-bar-container">
+                  <div class="progress-bar status-completed" style="width: 100%"></div>
+                </div>
+                
+                <p class="status-text status-completed">
+                  Completed
+                </p>
+              </div>
+              
+              <!-- Action buttons -->
+              <div class="song-actions">
+                <button class="download-button">
+                  Download
+                </button>
+                <button class="view-lyrics-button">
+                  View Lyrics
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Song Card 2: In Progress -->
+          <div class="song-card">
+            <div class="song-card-content">
+              <!-- Status indicator -->
+              <div class="status-indicator status-in-progress"></div>
+              
+              <!-- Song info -->
+              <div class="song-info">
+                <h3 class="song-title">Anniversary Love Song</h3>
+                <p class="song-metadata">Rock Ballad • 3:15 minutes</p>
+                <p class="song-order-date">Ordered: February 22, 2025</p>
+                
+                <!-- Progress bar -->
+                <div class="progress-bar-container">
+                  <div class="progress-bar status-in-progress" style="width: 50%"></div>
+                </div>
+                
+                <p class="status-text status-in-progress">
+                  In Progress (50%)
+                </p>
+              </div>
+              
+              <!-- Action buttons -->
+              <div class="song-actions">
+                <a href="song-details.html" class="view-details-button">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Song Card 3: Completed -->
+          <div class="song-card">
+            <div class="song-card-content">
+              <!-- Status indicator -->
+              <div class="status-indicator status-completed"></div>
+              
+              <!-- Song info -->
+              <div class="song-info">
+                <h3 class="song-title">Graduation Celebration</h3>
+                <p class="song-metadata">Hip Hop • 2:30 minutes</p>
+                <p class="song-order-date">Ordered: February 25, 2025</p>
+                
+                <!-- Progress bar -->
+                <div class="progress-bar-container">
+                  <div class="progress-bar status-completed" style="width: 100%"></div>
+                </div>
+                
+                <p class="status-text status-completed">
+                  Completed
+                </p>
+              </div>
+              
+              <!-- Action buttons -->
+              <div class="song-actions">
+                <button class="download-button">
+                  Download
+                </button>
+                <button class="view-lyrics-button">
+                  View Lyrics
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Empty state (hidden by default) -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <p class="empty-state-message" id="empty-state-message">
+            You don't have any songs yet.
+          </p>
+          <a href="create-song.html" class="create-song-button">
+            Create Your First Song
+          </a>
+        </div>
+        
+        <!-- Show more button -->
+        <!-- <div class="show-more-container">
+          <button class="show-more-button">
+            Show More Songs
+          </button>
+        </div> -->
+      </main>
+    </div>
+  </div>
+
+  <!-- JavaScript for interactivity -->
+  <script src="script.js"></script>
+</body>
+</html>

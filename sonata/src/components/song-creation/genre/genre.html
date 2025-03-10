@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Genre - Sonata</title>
+    <link rel="stylesheet" href="../global/header.css">
+    <link rel="stylesheet" href="genre.css">
+</head>
+<body>
+    <!-- Header (imported from global) -->
+    <div id="header-container"></div>
+
+    <main class="genre-selection-container">
+        <!-- Progress Tracker -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-filled" style="width: 30%"></div>
+            </div>
+            <div class="step-indicators">
+                <div class="step completed">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Package</div>
+                </div>
+                <div class="step active">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Genre</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Details</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">4</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">5</div>
+                    <div class="step-label">Confirm</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Title -->
+        <div class="page-title">
+            <h1>Choose Your Genre</h1>
+            <p>Select a music style that best fits your song</p>
+        </div>
+
+        <!-- Genre Grid -->
+        <div class="genre-grid">
+            <!-- Row 1 -->
+            <div class="genre-card">
+                <div class="genre-accent"></div>
+                <div class="genre-icon">🎸</div>
+                <h3>Rock</h3>
+                <p>Energetic & powerful</p>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-accent"></div>
+                <div class="genre-icon">🎤</div>
+                <h3>Pop</h3>
+                <p>Catchy & upbeat</p>
+            </div>
+
+            <div class="genre-card selected">
+                <div class="genre-accent"></div>
+                <div class="genre-icon">🤠</div>
+                <h3>Country</h3>
+                <p>Heartfelt & storytelling</p>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="genre-card">
+                <div class="genre-accent"></div>
+                <div class="genre-icon">🎹</div>
+                <h3>R&B</h3>
+                <p>Soulful & smooth</p>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-accent"></div>
+                <div class="genre-icon">🎷</div>
+                <h3>Jazz</h3>
+                <p>Sophisticated & elegant</p>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-accent"></div>
+                <div class="genre-icon">🪕</div>
+                <h3>Folk</h3>
+                <p>Acoustic & warm</p>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="genre-card">
+                <div class="genre-accent"></div>
+                <div class="genre-icon">🎧</div>
+                <h3>Hip Hop</h3>
+                <p>Rhythmic & lyrical</p>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-accent"></div>
+                <div class="genre-icon">🎻</div>
+                <h3>Classical</h3>
+                <p>Timeless & emotional</p>
+            </div>
+
+            <div class="genre-card">
+                <div class="genre-accent"></div>
+                <div class="genre-icon">🎛️</div>
+                <h3>Electronic</h3>
+                <p>Modern & innovative</p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <button class="btn-secondary" id="back-button">Back</button>
+            <button class="btn-primary" id="continue-button">Continue</button>
+        </div>
+
+        <!-- Help Text -->
+        <div class="help-text">
+            <p>Can't decide? Chat with our songwriters for guidance</p>
+            <a href="tel:8001234567">or call us at (800) 123-4567</a>
+        </div>
+    </main>
+
+    <script src="../global/header.js"></script>
+    <script src="genre.js"></script>
+</body>
+</html>

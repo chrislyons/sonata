@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonata - Login/Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Sonata</a>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="accent-top"></div>
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <div class="tab-content active" id="login-content">
+                <div class="form-content">
+                    <h2 class="form-title">Welcome Back</h2>
+                    <p class="form-subtitle">Please enter your credentials to continue</p>
+
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email" class="form-label">Email Address</label>
+                            <input type="email" id="login-email" class="form-input" placeholder="yourname@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                <label for="login-password" class="form-label">Password</label>
+                                <a href="#" class="forgot-password">Forgot Password?</a>
+                            </div>
+                            <input type="password" id="login-password" class="form-input" placeholder="••••••••••">
+                        </div>
+
+                        <div class="checkbox-container">
+                            <div class="checkbox" id="remember-checkbox"></div>
+                            <label for="remember-checkbox" class="checkbox-label">Remember me on this device</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+
+                    <div class="divider">
+                        <div class="divider-line"></div>
+                        <div class="divider-text">OR</div>
+                        <div class="divider-line"></div>
+                    </div>
+
+                    <div class="social-buttons">
+                        <button class="btn-social">Google</button>
+                        <button class="btn-social">Facebook</button>
+                    </div>
+
+                    <p class="footer-text">Don't have an account? <a href="#" id="to-signup">Sign up</a></p>
+
+                    <p class="tos-text">By logging in, you agree to our</p>
+                    <p class="tos-text" style="color: var(--purple-gradient-end);">Terms of Service and Privacy Policy</p>
+                </div>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="tab-content" id="signup-content">
+                <div class="form-content">
+                    <h2 class="form-title">Create an Account</h2>
+                    <p class="form-subtitle">Make custom songs for your loved ones</p>
+
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <label for="signup-name" class="form-label">Full Name</label>
+                            <input type="text" id="signup-name" class="form-input" placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-email" class="form-label">Email Address</label>
+                            <input type="email" id="signup-email" class="form-input" placeholder="yourname@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-password" class="form-label">Password</label>
+                            <input type="password" id="signup-password" class="form-input" placeholder="••••••••••">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-confirm-password" class="form-label">Confirm Password</label>
+                            <input type="password" id="signup-confirm-password" class="form-input" placeholder="••••••••••">
+                        </div>
+
+                        <div class="checkbox-container">
+                            <div class="checkbox" id="agree-checkbox"></div>
+                            <label for="agree-checkbox" class="checkbox-label">I agree to the Terms of Service and Privacy Policy</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                    </form>
+
+                    <div class="divider">
+                        <div class="divider-line"></div>
+                        <div class="divider-text">OR</div>
+                        <div class="divider-line"></div>
+                    </div>
+
+                    <div class="social-buttons">
+                        <button class="btn-social">Google</button>
+                        <button class="btn-social">Facebook</button>
+                    </div>
+
+                    <p class="footer-text">Already have an account? <a href="#" id="to-login">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

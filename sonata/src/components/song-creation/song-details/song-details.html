@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonata - Song Details</title>
+  <link rel="stylesheet" href="../../styles/reset.css">
+  <link rel="stylesheet" href="../../styles/variables.css">
+  <link rel="stylesheet" href="../../styles/global.css">
+  <link rel="stylesheet" href="../header.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="../../index.html">
+          <h1>Sonata</h1>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="../how-it-works/index.html">How It Works</a></li>
+          <li><a href="../song-inspiration/index.html">Song Inspiration</a></li>
+          <li><a href="../packages/index.html">Pricing</a></li>
+        </ul>
+      </nav>
+      <div class="header-buttons">
+        <a href="../account/my-songs.html" class="btn btn-outline">My Songs</a>
+        <a href="../account/login-signup/index.html" class="btn btn-outline">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="song-details-container">
+      <div class="song-details-header">
+        <h1 class="song-details-title">Song Details</h1>
+        <p class="song-details-subtitle">Tell us about the person this song is for</p>
+        <p class="song-details-description">The more descriptive and unique you get, the more special the song.</p>
+      </div>
+      
+      <!-- Progress Tracker -->
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 50%"></div>
+        </div>
+        <div class="progress-steps">
+          <div class="progress-step completed">
+            <div class="step-circle">1</div>
+            <div class="step-label">Package</div>
+          </div>
+          <div class="progress-step completed">
+            <div class="step-circle">2</div>
+            <div class="step-label">Genre</div>
+          </div>
+          <div class="progress-step active">
+            <div class="step-circle">3</div>
+            <div class="step-label">Details</div>
+          </div>
+          <div class="progress-step">
+            <div class="step-circle">4</div>
+            <div class="step-label">Payment</div>
+          </div>
+          <div class="progress-step">
+            <div class="step-circle">5</div>
+            <div class="step-label">Confirm</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Form -->
+      <div class="song-details-form-container">
+        <form class="song-details-form" id="songDetailsForm">
+          <div class="form-group">
+            <label for="recipientName">Recipient's Name</label>
+            <input
+              type="text"
+              id="recipientName"
+              name="recipientName"
+              class="form-input"
+              placeholder="Name or Nickname"
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="occasion">Occasion</label>
+            <div class="custom-select">
+              <select id="occasion" name="occasion" class="form-select">
+                <option value="" disabled selected>Select an occasion</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="birthday">Birthday</option>
+                <option value="christmas">Christmas</option>
+                <option value="engagement">Engagement</option>
+                <option value="fathers-day">Father's Day</option>
+                <option value="just-because">Just Because</option>
+                <option value="memorial">Memorial</option>
+                <option value="mothers-day">Mother's Day</option>
+                <option value="new-baby">New Baby</option>
+                <option value="proposal">Proposal</option>
+                <option value="valentines-day">Valentine's Day</option>
+                <option value="wedding">Wedding</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="select-arrow">▼</div>
+            </div>
+          </div>
+          
+          <!-- This will appear only when "Other" is selected for occasion -->
+          <div class="form-group" id="otherOccasionGroup" style="display: none;">
+            <label for="otherOccasion">Specify Occasion</label>
+            <input
+              type="text"
+              id="otherOccasion"
+              name="otherOccasion"
+              class="form-input"
+              placeholder="Enter Occasion"
+            >
+          </div>
+          
+          <div class="form-group" id="anniversaryDetailsGroup" style="display: none;">
+            <label for="occasionDetails">Anniversary Details</label>
+            <input
+              type="text"
+              id="occasionDetails"
+              name="occasionDetails"
+              class="form-input"
+              placeholder="e.g., 15th Wedding Anniversary"
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="memories">Special Memories or Stories</label>
+            <textarea
+              id="memories"
+              name="memories"
+              class="form-textarea"
+              placeholder="Share some special moments or stories that should be included in the song"
+              rows="4"
+            ></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="characteristics">Notable Characteristics</label>
+            <textarea
+              id="characteristics"
+              name="characteristics"
+              class="form-textarea"
+              placeholder="Share personality traits, hobbies, or anything else that makes this person unique"
+              rows="4"
+            ></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="relationship">Relationship To Recipient</label>
+            <div class="custom-select">
+              <select id="relationship" name="relationship" class="form-select">
+                <option value="" disabled selected>Select relationship</option>
+                <option value="wife">Wife</option>
+                <option value="husband">Husband</option>
+                <option value="partner">Partner</option>
+                <option value="boyfriend">Boyfriend</option>
+                <option value="girlfriend">Girlfriend</option>
+                <option value="fiancee">Fiancee</option>
+                <option value="significant-other">Significant Other</option>
+                <option value="mom">Mom</option>
+                <option value="dad">Dad</option>
+                <option value="parents">Parents</option>
+                <option value="daughter">Daughter</option>
+                <option value="son">Son</option>
+                <option value="children">Children</option>
+                <option value="grandmother">Grandmother</option>
+                <option value="grandfather">Grandfather</option>
+                <option value="grandparents">Grandparents</option>
+                <option value="family">Family</option>
+                <option value="friends">Friends</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="select-arrow">▼</div>
+            </div>
+          </div>
+          
+          <!-- This will appear only when "Other" is selected for relationship -->
+          <div class="form-group" id="otherRelationshipGroup" style="display: none;">
+            <label for="otherRelationship">Specify Relationship</label>
+            <input
+              type="text"
+              id="otherRelationship"
+              name="otherRelationship"
+              class="form-input"
+              placeholder="Enter Relationship"
+            >
+          </div>
+          
+          <div class="form-actions">
+            <a href="../genre/index.html" class="btn btn-outline">Back</a>
+            <button type="submit" class="btn btn-primary">Continue</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer can be included here -->
+  
+  <script src="script.js"></script>
+</body>
+</html>

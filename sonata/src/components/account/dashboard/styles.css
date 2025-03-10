@@ -1,0 +1,456 @@
+/* Dashboard Styles */
+
+/* Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f9f9fa;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    position: relative;
+    width: 240px;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #2D2E40, #3D3F58);
+    color: white;
+  }
+  
+  .logo-container {
+    padding: 24px;
+  }
+  
+  .logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+  }
+  
+  .user-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background-color: rgba(86, 91, 115, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .user-initials {
+    font-size: 40px;
+    color: white;
+  }
+  
+  .user-name {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .sidebar-nav {
+    margin-top: 48px;
+    padding: 0 20px;
+  }
+  
+  .nav-item {
+    display: block;
+    padding: 12px 24px;
+    margin-bottom: 16px;
+    color: #B0B5D0;
+    text-decoration: none;
+    border-radius: 24px;
+    transition: color 0.2s, background-color 0.2s;
+  }
+  
+  .nav-item:hover {
+    color: white;
+  }
+  
+  .nav-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: 600;
+  }
+  
+  .sign-out-container {
+    position: absolute;
+    bottom: 24px;
+    width: 100%;
+    padding: 0 24px;
+  }
+  
+  .sign-out-link {
+    display: block;
+    padding: 12px 24px;
+    color: #B0B5D0;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .sign-out-link:hover {
+    color: white;
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    flex: 1;
+    overflow: auto;
+  }
+  
+  .dashboard-header {
+    height: 80px;
+    padding: 0 32px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-container {
+    position: relative;
+    width: 288px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 24px;
+    background-color: #F5F5F7;
+    outline: none;
+    font-size: 14px;
+    color: #565B73;
+  }
+  
+  .search-clear-button {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: #A0A5BD;
+    cursor: pointer;
+  }
+  
+  .header-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+  }
+  
+  .icon-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #F5F5F7;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #A0A5BD;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .icon-button:hover {
+    background-color: #E4E6F0;
+  }
+  
+  .dashboard-main {
+    padding: 32px;
+  }
+  
+  .welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  
+  .welcome-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2D2E40;
+  }
+  
+  .welcome-subheading {
+    margin-top: 4px;
+    color: #565B73;
+    font-size: 15px;
+  }
+  
+  .new-song-button {
+    padding: 12px 24px;
+    background: linear-gradient(to right, #7F53AC, #647DEE);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0 4px 10px rgba(100, 125, 238, 0.3);
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+  }
+  
+  .new-song-button:hover {
+    box-shadow: 0 6px 12px rgba(100, 125, 238, 0.4);
+  }
+  
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .stats-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .stats-label {
+    color: #565B73;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .stats-value {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2D2E40;
+  }
+  
+  .songs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .songs-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2D2E40;
+  }
+  
+  .filter-container {
+    position: relative;
+  }
+  
+  .filter-dropdown {
+    padding: 8px 24px;
+    background-color: #F5F5F7;
+    border: none;
+    border-radius: 24px;
+    color: #565B73;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    padding-right: 40px;
+  }
+  
+  .filter-container::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #565B73;
+    pointer-events: none;
+  }
+  
+  .empty-state {
+    background-color: white;
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .empty-state-message {
+    color: #565B73;
+    margin-bottom: 16px;
+  }
+  
+  .create-song-button {
+    padding: 12px 24px;
+    background: linear-gradient(to right, #7F53AC, #647DEE);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .song-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .song-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  
+  .song-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .song-card-content {
+    display: flex;
+    padding: 24px;
+    position: relative;
+  }
+  
+  .status-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+  }
+  
+  .status-completed {
+    background-color: #4CD964;
+  }
+  
+  .status-in-progress {
+    background-color: #FFCC00;
+  }
+  
+  .status-pending {
+    background-color: #E4E6F0;
+  }
+  
+  .song-info {
+    flex: 1;
+    padding-left: 16px;
+  }
+  
+  .song-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2D2E40;
+    margin-bottom: 4px;
+  }
+  
+  .song-metadata {
+    color: #565B73;
+    margin-top: 4px;
+  }
+  
+  .song-order-date {
+    color: #A0A5BD;
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  
+  .progress-bar-container {
+    margin-top: 16px;
+    width: 100%;
+    height: 8px;
+    background-color: #F5F5F7;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    border-radius: 4px;
+  }
+  
+  .status-text {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  .status-text.status-completed {
+    color: #4CD964;
+  }
+  
+  .status-text.status-in-progress {
+    color: #FFCC00;
+  }
+  
+  .song-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .download-button, .view-lyrics-button, .view-details-button {
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .download-button {
+    background: linear-gradient(to right, #7F53AC, #647DEE);
+    opacity: 0.9;
+    color: white;
+    border: none;
+    transition: opacity 0.2s;
+  }
+  
+  .download-button:hover {
+    opacity: 1;
+  }
+  
+  .view-lyrics-button, .view-details-button {
+    background-color: #F5F5F7;
+    color: #565B73;
+    border: none;
+    transition: background-color 0.2s;
+  }
+  
+  .view-lyrics-button:hover, .view-details-button:hover {
+    background-color: #E4E6F0;
+  }
+  
+  .show-more-container {
+    margin-top: 32px;
+    text-align: center;
+  }
+  
+  .show-more-button {
+    padding: 12px 24px;
+    background-color: white;
+    border: 1px solid #E4E6F0;
+    color: #565B73;
+    font-weight: 600;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .show-more-button:hover {
+    background-color: #F5F5F7;
+  }

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - Sonata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Sonata</h1>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <span>J</span>
+                </div>
+                <h3 class="user-name">John Smith</h3>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-chart-simple"></i> Dashboard</a></li>
+                    <li><a href="my-songs.html"><i class="fa-solid fa-music"></i> My Songs</a></li>
+                    <li><a href="create-song.html"><i class="fa-solid fa-plus"></i> Create New</a></li>
+                    <li><a href="song-library.html"><i class="fa-solid fa-book"></i> Song Library</a></li>
+                    <li class="active"><a href="account-settings.html"><i class="fa-solid fa-gear"></i> Account Settings</a></li>
+                    <li><a href="help-support.html"><i class="fa-solid fa-circle-question"></i> Help & Support</a></li>
+                </ul>
+                <div class="sign-out">
+                    <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <h2>Account Settings</h2>
+                <div class="header-actions">
+                    <a href="#" class="help-icon"><i class="fa-solid fa-circle-question"></i></a>
+                </div>
+            </header>
+            
+            <!-- Settings Navigation Tabs -->
+            <div class="settings-tabs">
+                <div class="tab active" data-tab="profile">Profile</div>
+                <div class="tab" data-tab="password">Password</div>
+                <div class="tab" data-tab="notifications">Notifications</div>
+                <div class="tab" data-tab="billing">Billing</div>
+            </div>
+            
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Profile Tab -->
+                <div class="tab-pane active" id="profile">
+                    <div class="card">
+                        <h3>Personal Information</h3>
+                        <div class="profile-picture-section">
+                            <div class="profile-picture">
+                                <span>J</span>
+                            </div>
+                            <div class="picture-controls">
+                                <p>Upload a new photo</p>
+                                <label for="profile-upload" class="button-secondary">Choose File</label>
+                                <input type="file" id="profile-upload" hidden>
+                            </div>
+                        </div>
+                        <form class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" value="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" value="Smith">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" value="john.smith@example.com">
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="button-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Preferences</h3>
+                        <form class="preferences-form">
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <div class="select-wrapper">
+                                    <select id="language">
+                                        <option selected>English (US)</option>
+                                        <option>French</option>
+                                        <option>Spanish</option>
+                                        <option>German</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="timezone">Timezone</label>
+                                <div class="select-wrapper">
+                                    <select id="timezone">
+                                        <option selected>(UTC-08:00) Pacific Time</option>
+                                        <option>(UTC-05:00) Eastern Time</option>
+                                        <option>(UTC+00:00) Greenwich Mean Time</option>
+                                        <option>(UTC+01:00) Central European Time</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="button-primary">Save Preferences</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="card danger-zone">
+                        <h3>Delete Account</h3>
+                        <p>Once you delete your account, there is no going back. Please be certain.</p>
+                        <button type="button" class="button-danger" id="delete-account-btn">Delete Account</button>
+                    </div>
+                </div>
+                
+                <!-- Password Tab (Initially Hidden) -->
+                <div class="tab-pane" id="password">
+                    <div class="card">
+                        <h3>Change Password</h3>
+                        <p>Update your password to keep your account secure</p>
+                        <form class="password-form">
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <div class="password-field">
+                                    <input type="password" id="current-password" value="••••••••••">
+                                    <button type="button" class="toggle-password">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <div class="password-field">
+                                    <input type="password" id="new-password" value="">
+                                    <button type="button" class="toggle-password">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm New Password</label>
+                                <div class="password-field">
+                                    <input type="password" id="confirm-password" value="">
+                                    <button type="button" class="toggle-password">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="button-primary">Update Password</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="card password-tips">
+                        <h3>Password Requirements</h3>
+                        <ul>
+                            <li class="valid">At least 8 characters long</li>
+                            <li class="valid">At least one uppercase letter</li>
+                            <li class="valid">At least one number</li>
+                            <li class="valid">At least one special character</li>
+                            <li class="valid">No common passwords or patterns</li>
+                        </ul>
+                        <p class="tip">For maximum security, use a unique password that you don't use for other accounts.</p>
+                    </div>
+                </div>
+                
+                <!-- Notifications Tab (Initially Hidden) -->
+                <div class="tab-pane" id="notifications">
+                    <div class="card">
+                        <h3>Email Notifications</h3>
+                        <p>Choose which emails you'd like to receive</p>
+                        <div class="notification-options">
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Order Updates</h4>
+                                    <p>Receive emails about your song's progress and status changes</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Song Completion</h4>
+                                    <p>Get notified when your custom song is ready for download</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Marketing Updates</h4>
+                                    <p>Receive special offers, promotions, and new features</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Newsletter</h4>
+                                    <p>Monthly musical inspiration and songwriting tips</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Push Notifications</h3>
+                        <p>Receive notifications in your browser</p>
+                        <div class="notification-options">
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Browser Notifications</h4>
+                                    <p>Get real-time updates about your song orders</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="button-primary">Save Preferences</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Billing Tab (Initially Hidden) -->
+                <div class="tab-pane" id="billing">
+                    <div class="card">
+                        <h3>Payment Methods</h3>
+                        <p>Manage your saved payment methods</p>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <div class="payment-card-info">
+                                    <div class="card-brand">VISA</div>
+                                    <div class="card-details">
+                                        <h4>Visa ending in 4242</h4>
+                                        <p>Expires 09/27</p>
+                                    </div>
+                                </div>
+                                <div class="payment-actions">
+                                    <button type="button" class="text-button">Edit</button>
+                                    <button type="button" class="menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </div>
+                            </div>
+                            <button type="button" class="add-payment-button">
+                                <i class="fa-solid fa-plus"></i> Add New Payment Method
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Billing Address</h3>
+                        <p>Your billing address for receipts and invoices</p>
+                        <div class="billing-address">
+                            <div class="address-details">
+                                <h4>John Smith</h4>
+                                <p>123 Main Street</p>
+                                <p>Apartment 4B</p>
+                                <p>San Francisco, CA 94103</p>
+                                <p>United States</p>
+                            </div>
+                            <button type="button" class="button-secondary">Edit</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Billing History</h3>
+                        <p>View and download your past receipts</p>
+                        <div class="billing-history">
+                            <div class="billing-header">
+                                <span>Date</span>
+                                <span>Description</span>
+                                <span>Amount</span>
+                                <span></span>
+                            </div>
+                            <div class="billing-item">
+                                <span>28 Feb 2025</span>
+                                <span>Anniversary Love Song</span>
+                                <span>$149.00</span>
+                                <a href="#" class="pdf-link">PDF</a>
+                            </div>
+                            <div class="billing-item">
+                                <span>10 Feb 2025</span>
+                                <span>Birthday Song for Mom</span>
+                                <span>$149.00</span>
+                                <a href="#" class="pdf-link">PDF</a>
+                            </div>
+                            <div class="billing-item">
+                                <span>25 Jan 2025</span>
+                                <span>Graduation Celebration</span>
+                                <span>$99.00</span>
+                                <a href="#" class="pdf-link">PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Delete Account Modal -->
+    <div class="modal" id="delete-account-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Delete Your Account</h3>
+                <button type="button" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>This action cannot be undone. This will permanently delete your account and remove your data from our servers.</p>
+                <p>To confirm, please type "delete my account" below:</p>
+                <input type="text" id="delete-confirmation" placeholder="delete my account">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button-secondary" id="cancel-delete">Cancel</button>
+                <button type="button" class="button-danger" id="confirm-delete" disabled>Delete Account</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

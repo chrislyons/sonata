@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonata - Payment</title>
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/variables.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../../global/formStorage.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <h1>Sonata</h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../how-it-works/index.html">How It Works</a></li>
+                    <li><a href="../song-inspiration/index.html">Song Inspiration</a></li>
+                    <li><a href="../packages/index.html">Pricing</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="../account/my-songs.html" class="btn btn-outline">My Songs</a>
+                <a href="../account/login-signup/index.html" class="btn btn-outline">Login</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="progress-steps">
+            <div class="step completed">
+                <div class="step-number">1</div>
+                <div class="step-label">Package</div>
+            </div>
+            <div class="step-connector completed"></div>
+            
+            <div class="step completed">
+                <div class="step-number">2</div>
+                <div class="step-label">Genre</div>
+            </div>
+            <div class="step-connector completed"></div>
+            
+            <div class="step completed">
+                <div class="step-number">3</div>
+                <div class="step-label">Details</div>
+            </div>
+            <div class="step-connector completed"></div>
+            
+            <div class="step active">
+                <div class="step-number">4</div>
+                <div class="step-label">Payment</div>
+            </div>
+            <div class="step-connector"></div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-label">Confirm</div>
+            </div>
+        </div>
+        
+        <h1 class="page-title">Payment</h1>
+        <p class="page-subtitle">Complete your order securely</p>
+        
+        <div class="payment-section">
+            <div class="order-box">
+                <h2 class="section-title">Order Summary</h2>
+                
+                <h3 class="order-title">Song for <span id="summary-recipient">Your Recipient</span></h3>
+                <p class="order-details"><span id="summary-genre">Selected Genre</span> • <span id="summary-package">Selected Package</span></p>
+                <p class="order-occasion">Occasion: <span id="summary-occasion">Selected Occasion</span></p>
+                
+                <div class="order-line">
+                    <span>Song Production</span>
+                    <span id="summary-price">$129.00</span>
+                </div>
+                
+                <div class="order-line">
+                    <span>Lyrics PDF</span>
+                    <span>Included</span>
+                </div>
+                
+                <div class="order-line">
+                    <span>Digital Delivery</span>
+                    <span>Free</span>
+                </div>
+                
+                <div class="order-total">
+                    <span>Total</span>
+                    <span id="summary-total">$129.00</span>
+                </div>
+                
+                <div class="delivery-estimate">
+                    Estimated delivery: 5-7 days
+                </div>
+            </div>
+            
+            <div class="payment-box">
+                <h2 class="section-title">Payment Method</h2>
+                
+                <form id="payment-form" name="song-order" method="POST" data-netlify="true">
+                    <!-- Hidden fields for form data -->
+                    <input type="hidden" name="form-name" value="song-order">
+                    <input type="hidden" id="payment-method" name="payment-method" value="credit-card">
+                    <input type="hidden" name="recipient-name" id="form-recipient-name">
+                    <input type="hidden" name="occasion" id="form-occasion">
+                    <input type="hidden" name="package" id="form-package">
+                    <input type="hidden" name="genre" id="form-genre">
+                    <input type="hidden" name="price" id="form-price">
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method selected" data-method="credit-card">
+                            <span>Credit/Debit Card</span>
+                            <span class="payment-circle"></span>
+                        </div>
+                        
+                        <div class="payment-method" data-method="paypal">
+                            <span>PayPal</span>
+                            <span class="payment-circle"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Card Number</label>
+                        <input type="text" name="card-number" class="form-control" placeholder="1234 5678 9012 3456">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Cardholder Name</label>
+                        <input type="text" name="cardholder-name" class="form-control" placeholder="John Smith">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label class="form-label">Expiry Date</label>
+                            <input type="text" name="expiry-date" class="form-control" placeholder="MM / YY">
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label class="form-label">CVV</label>
+                            <input type="text" name="cvv" class="form-control" placeholder="123">
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="goBack()">Back</button>
+                        <button type="submit" id="complete-payment-btn" class="btn btn-primary">Complete Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="payment.js"></script>
+</body>
+</html>

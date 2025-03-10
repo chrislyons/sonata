@@ -1,0 +1,515 @@
+/* Packages Page Styles */
+
+/* Hero Section */
+.packages-hero {
+  text-align: center;
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.packages-hero__title {
+  font-size: 3.2rem; /* Same size as section-title */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.packages-hero__subtitle {
+  font-size: 1.6rem; /* Same size as section-subtitle */
+  color: var(--color-text-body);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.packages-hero__buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.view-packages-button {
+  background: linear-gradient(90deg, #6c5ce7 0%, #8e74f9 100%);
+  color: white;
+  padding: 1.2rem 2.4rem;
+  border-radius: 3rem;
+  font-weight: var(--font-weight-medium);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.view-packages-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+}
+
+.compare-features-button {
+  background-color: transparent;
+  color: var(--color-primary-light);
+  border: 2px solid var(--color-primary-light);
+  padding: 1.2rem 2.4rem;
+  border-radius: 3rem;
+  font-weight: var(--font-weight-medium);
+  transition: all 0.3s ease;
+}
+
+.compare-features-button:hover {
+  background-color: rgba(108, 92, 231, 0.1);
+}
+
+/* Packages Section */
+.packages-section {
+  background-color: var(--color-background-subtle);
+  padding: 5rem 0;
+}
+
+.section-title {
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-dark);
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.section-subtitle {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  color: var(--color-text-body);
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.package-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: var(--spacing-xl);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.most-popular-tag {
+  background: linear-gradient(90deg, #6c5ce7 0%, #8e74f9 100%);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-xs) 1.5rem;
+  font-weight: var(--font-weight-medium);
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.package-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.package-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.price-amount {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #6c5ce7;
+}
+
+.price-period {
+  font-size: 1.6rem;
+  color: var(--color-text-light);
+  margin-left: var(--spacing-xxs);
+}
+
+.package-description {
+  color: var(--color-text-body);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.feature-list {
+  margin-bottom: var(--spacing-xl);
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.6rem;
+}
+
+.feature-icon {
+  color: #6c5ce7;
+  margin-right: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.select-package-button {
+  width: 100%;
+  background: linear-gradient(90deg, #6c5ce7 0%, #8e74f9 100%);
+  color: white;
+  padding: 1.2rem;
+  border-radius: 2rem;
+  border: none;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-package-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+}
+
+.secondary-button {
+  width: 100%;
+  background: transparent;
+  color: #6c5ce7;
+  border: 2px solid #6c5ce7;
+  padding: 1.2rem;
+  border-radius: 2rem;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondary-button:hover {
+  background-color: rgba(108, 92, 231, 0.1);
+}
+
+.packages-custom {
+  text-align: center;
+  margin-top: var(--spacing-xxl);
+}
+
+.packages-custom p {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-body);
+}
+
+/* Comparison Table */
+.comparison-section {
+  padding: var(--spacing-xxxl) 0;
+  background-color: white;
+}
+
+.comparison-table-wrapper {
+  max-width: 100rem;
+  margin: 0 auto;
+  overflow-x: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 1.2rem;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1.6rem 2.4rem;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.comparison-table th {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  text-align: left;
+}
+
+.comparison-table__feature {
+  display: flex;
+  align-items: center;
+}
+
+.comparison-table__feature i {
+  margin-right: var(--spacing-sm);
+  color: #6c5ce7;
+}
+
+.comparison-table__feature span {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-dark);
+}
+
+.highlighted-column {
+  background-color: rgba(108, 92, 231, 0.05);
+}
+
+th.highlighted-column {
+  background-color: #6c5ce7;
+  color: white;
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: var(--color-background-subtle);
+  padding: var(--spacing-xxxl) 0;
+}
+
+.faq-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: white;
+  border-radius: 1.2rem;
+  margin-bottom: var(--spacing-md);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: white;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-dark);
+  font-size: 1.6rem;
+}
+
+.faq-question:focus {
+  outline: none;
+}
+
+.faq-question i {
+  transition: transform 0.3s ease;
+  color: var(--color-text-light);
+}
+
+.faq-question.active {
+  color: #6c5ce7;
+}
+
+.faq-question.active i {
+  transform: rotate(90deg);
+  color: #6c5ce7;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer.active {
+  max-height: 20rem;
+  padding: 0 2rem 2rem;
+}
+
+.faq-answer p {
+  color: var(--color-text-body);
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.faq-contact {
+  text-align: center;
+  margin-top: var(--spacing-xxl);
+}
+
+.faq-contact p {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-body);
+}
+
+/* Call-to-Action Section */
+.final-cta {
+  text-align: center;
+  padding: var(--spacing-xxxl) 0;
+}
+
+.final-cta__title {
+  font-size: 3.6rem;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-dark);
+}
+
+.final-cta p {
+  color: var(--color-text-body);
+  font-size: 1.8rem;
+  max-width: 60rem;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.final-cta__buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .packages-grid {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .packages-hero__title {
+    font-size: 3rem;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+  }
+  
+  .packages-hero__subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1.2rem 1.6rem;
+  }
+  
+  .final-cta__title {
+    font-size: 3rem;
+  }
+}
+
+/* Add this to your CSS file */
+.select-package-button, 
+.final-cta .select-package-button {
+  max-width: 240px; /* Adjust this value as needed */
+  display: inline-block;
+}
+
+.final-cta__buttons {
+  justify-content: center;
+}
+
+/* Header & Navigation Styling to match landing page */
+header {
+  position: relative;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+header::before {
+  content: '';
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, #7F53AC, #647DEE);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  height: 80px;
+}
+
+header .container {
+  padding: 0 20px;
+}
+
+.main-nav__logo a {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2D2E40;
+  text-decoration: none;
+}
+
+.main-nav__links {
+  display: flex;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.main-nav__links a {
+  color: #565B73;
+  font-size: 15px;
+  text-decoration: none;
+  margin-right: 30px;
+  transition: color 0.3s ease;
+}
+
+.main-nav__links a:hover,
+.main-nav__links a.active {
+  color: var(--color-primary-light);
+}
+
+.login-link {
+  background: transparent;
+  border: 1.5px solid var(--color-primary-light);
+  color: var(--color-primary-light);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.login-link:hover {
+  background: rgba(100, 125, 238, 0.05);
+}

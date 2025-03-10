@@ -1,0 +1,285 @@
+/* Song Details Page Styles */
+
+.song-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header Styles */
+  .song-details-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .song-details-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #2D2E40;
+    margin-bottom: 12px;
+  }
+  
+  .song-details-subtitle {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #565B73;
+    margin-bottom: 8px;
+  }
+  
+  .song-details-description {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #565B73;
+  }
+  
+  /* Progress Tracker */
+  .progress-container {
+    width: 100%;
+    margin: 0 auto 40px;
+    padding: 20px;
+    background-color: #F5F5F7;
+    border-radius: 40px;
+  }
+  
+  .progress-bar {
+    height: 4px;
+    background-color: #E4E6F0;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  
+  .progress-fill {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(90deg, #647DEE 0%, #7F53AC 100%);
+    border-radius: 2px;
+  }
+  
+  .progress-steps {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+  }
+  
+  .step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    background-color: #ffffff;
+    border: 2px solid #E4E6F0;
+    color: #A0A5BD;
+  }
+  
+  .step-label {
+    font-size: 12px;
+    color: #A0A5BD;
+    text-align: center;
+  }
+  
+  .progress-step.active .step-circle,
+  .progress-step.completed .step-circle {
+    background: linear-gradient(90deg, #7F53AC 0%, #647DEE 100%);
+    color: white;
+    border: none;
+  }
+  
+  .progress-step.active .step-label,
+  .progress-step.completed .step-label {
+    color: #2D2E40;
+    font-weight: bold;
+  }
+  
+  /* Form Styles */
+  .song-details-form-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .song-details-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 24px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2D2E40;
+    margin-bottom: 8px;
+  }
+  
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #2D2E40;
+    background-color: #F9F9FF;
+    border: 1px solid #E4E6F0;
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
+  }
+  
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: #647DEE;
+  }
+  
+  .form-input.error,
+  .form-select.error,
+  .form-textarea.error {
+    border-color: #FF3B30;
+  }
+  
+  .form-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .custom-select {
+    position: relative;
+  }
+  
+  .form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 40px;
+  }
+  
+  .select-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #A0A5BD;
+    font-size: 12px;
+  }
+  
+  .error-message {
+    color: #FF3B30;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+  /* Form placeholder styling */
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: #A0A5BD;
+    opacity: 1;
+  }
+  
+  /* Form Actions */
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  
+  .btn {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0 24px;
+    height: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    text-decoration: none;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(90deg, #7F53AC 0%, #647DEE 100%);
+    color: white;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(100, 125, 238, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(100, 125, 238, 0.4);
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    color: #565B73;
+    border: 1.5px solid #E4E6F0;
+  }
+  
+  .btn-outline:hover {
+    color: #647DEE;
+    border-color: #647DEE;
+    background-color: #F9F9FF;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .song-details-container {
+      padding: 16px;
+    }
+    
+    .song-details-form-container {
+      padding: 24px;
+    }
+    
+    .song-details-title {
+      font-size: 28px;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .btn {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .progress-container {
+      padding: 16px;
+    }
+    
+    .step-circle {
+      width: 30px;
+      height: 30px;
+      font-size: 10px;
+    }
+    
+    .step-label {
+      font-size: 10px;
+    }
+  }

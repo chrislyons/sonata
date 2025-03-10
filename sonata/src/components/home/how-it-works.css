@@ -1,0 +1,93 @@
+.how-it-works {
+    background-color: #FAFAFA;
+    padding: var(--spacing-xxxl) 0;
+  }
+  
+  .process-steps {
+    display: flex;
+    justify-content: space-around;
+    margin-top: var(--spacing-xxl);
+    position: relative;
+  }
+  
+  /* Connector lines between steps */
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 20%;
+    width: 60%;
+    height: 2px;
+    background-color: var(--color-border);
+    z-index: 1;
+    border-style: dashed;
+    border-width: 0 0 2px 0;
+    border-color: var(--color-border);
+  }
+  
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 20rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .process-step__number {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: var(--font-size-xxxl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-light);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .process-step__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-dark);
+  }
+  
+  .process-step__description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-body);
+    line-height: 1.5;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .process-steps {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-xxl);
+    }
+    
+    .process-steps::before {
+      display: none;
+    }
+    
+    .process-step {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .process-step__number {
+      width: 8rem;
+      height: 8rem;
+      font-size: var(--font-size-xxl);
+    }
+  }

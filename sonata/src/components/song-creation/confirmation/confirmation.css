@@ -1,0 +1,451 @@
+/* Main container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Progress Steps */
+.progress-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    background-color: #f9f9fb;
+    border-radius: 10px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #7863cf;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.step.active .step-number {
+    background-color: #7863cf;
+}
+
+.step-label {
+    font-size: 14px;
+    color: #565B73;
+}
+
+.step.active .step-label {
+    color: #2D2E40;
+    font-weight: 600;
+}
+
+.step-connector {
+    height: 3px;
+    background-color: #7863cf;
+    width: 100px;
+    position: relative;
+    margin: 0 5px;
+    top: -27px;
+    z-index: 0;
+}
+
+/* Confirmation Circle */
+.confirmation-circle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Main Heading */
+.main-heading {
+    font-size: 42px;
+    text-align: center;
+    color: #2D2E40;
+    margin-bottom: 10px;
+}
+
+.main-subheading {
+    font-size: 18px;
+    text-align: center;
+    color: #565B73;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Order Summary Card */
+.summary-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.summary-heading {
+    font-size: 24px;
+    color: #2D2E40;
+    margin-bottom: 25px;
+}
+
+.summary-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.detail-label {
+    color: #565B73;
+}
+
+.detail-value {
+    color: #2D2E40;
+    font-weight: 500;
+}
+
+.summary-divider {
+    border: none;
+    height: 1px;
+    background-color: #E4E6F0;
+    margin: 25px 0;
+}
+
+.song-title {
+    font-size: 20px;
+    color: #2D2E40;
+    margin-bottom: 5px;
+}
+
+.song-details {
+    color: #565B73;
+    margin-bottom: 5px;
+}
+
+.song-for {
+    color: #565B73;
+}
+
+.total-row {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.total-row .detail-label,
+.total-row .detail-value {
+    font-weight: 600;
+}
+
+.delivery-estimate {
+    background-color: #F5F5F7;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 25px;
+    color: #565B73;
+}
+
+/* What's Next Section */
+.next-heading {
+    font-size: 24px;
+    text-align: center;
+    color: #2D2E40;
+    margin-bottom: 20px;
+}
+
+.next-description {
+    text-align: center;
+    color: #565B73;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.primary-button {
+    background: linear-gradient(to right, #7F53AC, #647DEE);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(100, 125, 238, 0.3);
+}
+
+.secondary-button {
+    border: 1.5px solid #647DEE;
+    color: #647DEE;
+    padding: 15px 30px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .progress-steps {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 20px 10px;
+    }
+    
+    .step-connector {
+        width: 60px;
+    }
+    
+    .main-heading {
+        font-size: 32px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .primary-button, 
+    .secondary-button {
+        display: block;
+        text-align: center;
+    }
+}
+
+/* Confirmation Page Styles */
+
+.confirmation-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.confirmation-icon {
+    margin: 0 auto 30px;
+    width: 80px;
+    height: 80px;
+}
+
+.confirmation-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2D2E40;
+    margin-bottom: 16px;
+}
+
+.confirmation-message {
+    font-size: 18px;
+    color: #565B73;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.order-details {
+    background-color: #F8F9FA;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.order-details h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2D2E40;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #E9ECEF;
+}
+
+.order-row:last-child {
+    border-bottom: none;
+}
+
+.order-row .label {
+    font-weight: 600;
+    color: #565B73;
+}
+
+.order-row .value {
+    color: #2D2E40;
+}
+
+.next-steps {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.next-steps h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2D2E40;
+}
+
+.steps-list {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.steps-list li {
+    margin-bottom: 12px;
+    padding-left: 10px;
+    position: relative;
+    line-height: 1.6;
+    color: #565B73;
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Progress Steps Styles */
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #F0F0F5;
+    color: #9A9CB5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+    border: 2px solid #F0F0F5;
+}
+
+.step-label {
+    font-size: 14px;
+    color: #9A9CB5;
+    font-weight: 500;
+}
+
+.step-connector {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #F0F0F5;
+    margin: 0 10px;
+    position: relative;
+    top: -22px;
+    z-index: 0;
+}
+
+.step.active .step-number {
+    background-color: #7F53AC;
+    color: white;
+    border-color: #7F53AC;
+}
+
+.step.active .step-label {
+    color: #7F53AC;
+    font-weight: 600;
+}
+
+.step.completed .step-number {
+    background-color: #7F53AC;
+    color: white;
+    border-color: #7F53AC;
+}
+
+.step.completed .step-label {
+    color: #7F53AC;
+}
+
+.step-connector.completed {
+    background-color: #7F53AC;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .confirmation-title {
+        font-size: 28px;
+    }
+    
+    .confirmation-message {
+        font-size: 16px;
+    }
+    
+    .order-details {
+        padding: 20px;
+    }
+    
+    .confirmation-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .progress-steps {
+        margin: 30px auto;
+    }
+    
+    .step-label {
+        font-size: 12px;
+    }
+    
+    .step-number {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .step-label {
+        display: none;
+    }
+    
+    .step-number {
+        margin-bottom: 0;
+    }
+}

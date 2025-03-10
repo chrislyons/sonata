@@ -1,0 +1,25 @@
+{
+  "name": "sonata",
+  "version": "1.0.0",
+  "description": "Custom songs that tell your story",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ./dist -p 3000",
+    "build": "node build.js",
+    "deploy": "npm run build && netlify deploy --prod"
+  },
+  "keywords": [
+    "music",
+    "custom",
+    "songs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "fs-extra": "^11.1.1",
+    "html-minifier": "^4.0.0",
+    "http-server": "^14.1.1",
+    "netlify-cli": "^15.0.0",
+    "uglify-js": "^3.17.4"
+  }
+} 

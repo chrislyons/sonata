@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonata - Order Confirmation</title>
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/variables.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="confirmation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../../global/formStorage.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <h1>Sonata</h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../how-it-works/index.html">How It Works</a></li>
+                    <li><a href="../song-inspiration/index.html">Song Inspiration</a></li>
+                    <li><a href="../packages/index.html">Pricing</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="../account/my-songs.html" class="btn btn-outline">My Songs</a>
+                <a href="../account/login-signup/index.html" class="btn btn-outline">Login</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="progress-steps">
+            <div class="step completed">
+                <div class="step-number">1</div>
+                <div class="step-label">Package</div>
+            </div>
+            <div class="step-connector completed"></div>
+            
+            <div class="step completed">
+                <div class="step-number">2</div>
+                <div class="step-label">Genre</div>
+            </div>
+            <div class="step-connector completed"></div>
+            
+            <div class="step completed">
+                <div class="step-number">3</div>
+                <div class="step-label">Details</div>
+            </div>
+            <div class="step-connector completed"></div>
+            
+            <div class="step completed">
+                <div class="step-number">4</div>
+                <div class="step-label">Payment</div>
+            </div>
+            <div class="step-connector completed"></div>
+            
+            <div class="step completed active">
+                <div class="step-number">5</div>
+                <div class="step-label">Confirm</div>
+            </div>
+        </div>
+        
+        <div class="confirmation-container">
+            <div class="confirmation-icon">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="40" fill="#4CAF50" fill-opacity="0.1"/>
+                    <path d="M32 40L38 46L48 34" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <h1 class="confirmation-title">Thank You for Your Order!</h1>
+            <p class="confirmation-message">Your custom song is now in the works. We'll send you updates as we create your special song.</p>
+            
+            <div class="order-details">
+                <h2>Order Details</h2>
+                <div class="order-info">
+                    <div class="order-row">
+                        <span class="label">Order Number:</span>
+                        <span class="value" id="order-number">SON-12345</span>
+                    </div>
+                    <div class="order-row">
+                        <span class="label">Song For:</span>
+                        <span class="value" id="recipient-name">Your Recipient</span>
+                    </div>
+                    <div class="order-row">
+                        <span class="label">Occasion:</span>
+                        <span class="value" id="occasion">Birthday</span>
+                    </div>
+                    <div class="order-row">
+                        <span class="label">Package:</span>
+                        <span class="value" id="package">Standard</span>
+                    </div>
+                    <div class="order-row">
+                        <span class="label">Genre:</span>
+                        <span class="value" id="genre">Pop</span>
+                    </div>
+                    <div class="order-row">
+                        <span class="label">Estimated Delivery:</span>
+                        <span class="value">5-7 days</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="next-steps">
+                <h2>What's Next?</h2>
+                <ol class="steps-list">
+                    <li>Our songwriters will review your song details</li>
+                    <li>We'll create a custom song based on your information</li>
+                    <li>You'll receive an email when your song is ready</li>
+                    <li>Download your song and enjoy!</li>
+                </ol>
+            </div>
+            
+            <div class="confirmation-actions">
+                <a href="../../index.html" class="btn btn-primary">Return to Home</a>
+                <a href="../account/my-songs.html" class="btn btn-outline">View My Songs</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="confirmation.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonata - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar with gradient background -->
+        <aside class="sidebar">
+            <!-- Logo in sidebar -->
+            <div class="logo">
+                <h1>Sonata</h1>
+                <p class="subtitle">Admin Panel</p>
+            </div>
+            
+            <!-- Admin profile section -->
+            <div class="profile">
+                <div class="avatar">A</div>
+                <p class="name">Admin</p>
+            </div>
+            
+            <!-- Menu items -->
+            <nav class="menu">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Customers</a></li>
+                    <li><a href="#"><i class="fas fa-music"></i> Songwriters</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            
+            <div class="sign-out">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            </div>
+        </aside>
+        
+        <!-- Main content area -->
+        <main class="main-content">
+            <!-- Header with shadow -->
+            <header class="main-header">
+                <div class="search-container">
+                    <input type="text" placeholder="Search orders, customers...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="header-icons">
+                    <div class="icon-circle">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="icon-circle">
+                        <i class="fas fa-question"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dashboard content -->
+            <div class="dashboard-content">
+                <!-- Welcome section -->
+                <div class="welcome-section">
+                    <div>
+                        <h2>Admin Dashboard</h2>
+                        <p>Monitor orders and manage customer songs</p>
+                    </div>
+                </div>
+                
+                <!-- Stats cards -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <p class="stat-label">New Orders</p>
+                        <p class="stat-value">5</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <p class="stat-label">In Progress</p>
+                        <p class="stat-value">8</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <p class="stat-label">Completed</p>
+                        <p class="stat-value">12</p>
+                    </div>
+                </div>
+                
+                <!-- Orders section -->
+                <div class="orders-section">
+                    <div class="section-header">
+                        <h2>Recent Orders</h2>
+                        <div class="filter-dropdown">
+                            <span>Filter: All Orders</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Orders table -->
+                    <div class="orders-table">
+                        <div class="table-header">
+                            <div class="th customer">Customer</div>
+                            <div class="th song-details">Song Details</div>
+                            <div class="th status">Status</div>
+                            <div class="th actions">Actions</div>
+                        </div>
+                        
+                        <!-- Order Row 1 -->
+                        <div class="table-row">
+                            <div class="td customer">
+                                <p class="customer-name">John Smith</p>
+                                <p class="order-date">Feb 10, 2025</p>
+                            </div>
+                            <div class="td song-details">
+                                <p class="song-name">Birthday Song for Mom</p>
+                                <p class="song-info">Country • 2:45 min</p>
+                            </div>
+                            <div class="td status">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                            <div class="td actions">
+                                <button class="action-button"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Order Row 2 -->
+                        <div class="table-row">
+                            <div class="td customer">
+                                <p class="customer-name">Mary Johnson</p>
+                                <p class="order-date">Feb 22, 2025</p>
+                            </div>
+                            <div class="td song-details">
+                                <p class="song-name">Anniversary Love Song</p>
+                                <p class="song-info">Rock Ballad • 3:15 min</p>
+                            </div>
+                            <div class="td status">
+                                <span class="status-badge in-progress">In Progress</span>
+                            </div>
+                            <div class="td actions">
+                                <button class="action-button"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Order Row 3 -->
+                        <div class="table-row">
+                            <div class="td customer">
+                                <p class="customer-name">Robert Wilson</p>
+                                <p class="order-date">Feb 25, 2025</p>
+                            </div>
+                            <div class="td song-details">
+                                <p class="song-name">Graduation Song</p>
+                                <p class="song-info">Hip Hop • 2:30 min</p>
+                            </div>
+                            <div class="td status">
+                                <span class="status-badge processing">Processing</span>
+                            </div>
+                            <div class="td actions">
+                                <button class="action-button"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Order Row 4 -->
+                        <div class="table-row">
+                            <div class="td customer">
+                                <p class="customer-name">Sarah Davis</p>
+                                <p class="order-date">Feb 27, 2025</p>
+                            </div>
+                            <div class="td song-details">
+                                <p class="song-name">Valentine's Day Song</p>
+                                <p class="song-info">Jazz • 3:00 min</p>
+                            </div>
+                            <div class="td status">
+                                <span class="status-badge new">New</span>
+                            </div>
+                            <div class="td actions">
+                                <button class="action-button"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Upload Section -->
+                <div class="upload-section">
+                    <h3>Upload Completed Song</h3>
+                    <div class="upload-order-selector">
+                        <select>
+                            <option disabled selected>Select order...</option>
+                            <option>Birthday Song for Mom - John Smith</option>
+                            <option>Anniversary Love Song - Mary Johnson</option>
+                            <option>Graduation Song - Robert Wilson</option>
+                            <option>Valentine's Day Song - Sarah Davis</option>
+                        </select>
+                    </div>
+                    <button class="upload-button">Upload MP3</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

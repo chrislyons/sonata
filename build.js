@@ -15,6 +15,12 @@ fs.emptyDirSync(distDir);
 console.log('Copying files...');
 fs.copySync(srcDir, distDir);
 
+// Copy index.html to the root of dist
+fs.copyFileSync(
+  path.join(srcDir, 'templates', 'index.html'),
+  path.join(distDir, 'index.html')
+);
+
 // Process HTML files
 console.log('Processing HTML files...');
 processDirectory(distDir, '.html', (filePath, content) => {

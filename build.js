@@ -30,6 +30,28 @@ fs.copyFileSync(
   path.join(distDir, 'index.html')
 );
 
+// Extract the header HTML from the main index.html to use as a template
+console.log('Extracting header template...');
+const mainIndexContent = fs.readFileSync(path.join(srcDir, 'templates', 'index.html'), 'utf8');
+const headerMatch = mainIndexContent.match(/<header class="header">[\s\S]*?<\/header>/);
+let headerTemplate = '';
+if (headerMatch) {
+  headerTemplate = headerMatch[0];
+  // Make sure all links are absolute
+  headerTemplate = headerTemplate.replace(/href="\//g, 'href="/');
+  // Ensure the logo links to the home page
+  headerTemplate = headerTemplate.replace(/<a href="[^"]*" class="header__logo">/, '<a href="/" class="header__logo">');
+}
+
+// Copy main CSS for consistent styling
+console.log('Copying main CSS for consistent styling...');
+// Extract CSS from main index.html
+const cssMatch = mainIndexContent.match(/<style>[\s\S]*?<\/style>/);
+let mainCss = '';
+if (cssMatch) {
+  mainCss = cssMatch[0];
+}
+
 // Copy song creation page to /create
 console.log('Setting up song creation page...');
 if (fs.existsSync(path.join(srcDir, 'components', 'song-creation', 'song-details', 'song-details.html'))) {
@@ -39,13 +61,23 @@ if (fs.existsSync(path.join(srcDir, 'components', 'song-creation', 'song-details
     'utf8'
   );
   
+  // Replace the header with the consistent header template
+  if (headerTemplate) {
+    songDetailsContent = songDetailsContent.replace(/<header[\s\S]*?<\/header>/, headerTemplate);
+  }
+  
   // Fix relative paths in the HTML
   songDetailsContent = songDetailsContent.replace(/\.\.\/\.\.\//g, '/');
-  songDetailsContent = songDetailsContent.replace(/\.\.\/how-it-works\/index\.html/g, '/how-it-works/');
-  songDetailsContent = songDetailsContent.replace(/\.\.\/song-inspiration\/index\.html/g, '/song-inspiration/');
-  songDetailsContent = songDetailsContent.replace(/\.\.\/packages\/index\.html/g, '/pricing/');
-  songDetailsContent = songDetailsContent.replace(/\.\.\/account\/my-songs\.html/g, '/account/my-songs/');
-  songDetailsContent = songDetailsContent.replace(/\.\.\/account\/login-signup\/index\.html/g, '/login/');
+  songDetailsContent = songDetailsContent.replace(/href="\.\.\/how-it-works\/index\.html"/g, 'href="/how-it-works/"');
+  songDetailsContent = songDetailsContent.replace(/href="\.\.\/song-inspiration\/index\.html"/g, 'href="/song-inspiration/"');
+  songDetailsContent = songDetailsContent.replace(/href="\.\.\/packages\/index\.html"/g, 'href="/pricing/"');
+  songDetailsContent = songDetailsContent.replace(/href="\.\.\/account\/my-songs\.html"/g, 'href="/account/my-songs/"');
+  songDetailsContent = songDetailsContent.replace(/href="\.\.\/account\/login-signup\/index\.html"/g, 'href="/login/"');
+  
+  // Add the main CSS to ensure consistent styling
+  if (mainCss) {
+    songDetailsContent = songDetailsContent.replace('</head>', `${mainCss}</head>`);
+  }
   
   // Write the modified content
   fs.writeFileSync(
@@ -86,6 +118,9 @@ if (fs.existsSync(path.join(srcDir, 'components', 'account', 'login-signup', 'in
     'utf8'
   );
   
+  // Fix the logo link to point to the home page
+  loginContent = loginContent.replace(/<a href="[^"]*" class="logo">Sonata<\/a>/, '<a href="/" class="logo">Sonata</a>');
+  
   // Fix relative paths in the HTML
   loginContent = loginContent.replace(/\.\.\/\.\.\//g, '/');
   
@@ -120,12 +155,25 @@ if (fs.existsSync(path.join(srcDir, 'components', 'packages', 'index.html'))) {
     'utf8'
   );
   
+  // Replace the header with the consistent header template if available
+  if (headerTemplate) {
+    const pricingHeaderMatch = pricingContent.match(/<header[\s\S]*?<\/header>/);
+    if (pricingHeaderMatch) {
+      pricingContent = pricingContent.replace(pricingHeaderMatch[0], headerTemplate);
+    }
+  }
+  
   // Fix relative paths in the HTML
   pricingContent = pricingContent.replace(/\.\.\/\.\.\//g, '/');
   pricingContent = pricingContent.replace(/href="\/how-it-works"/g, 'href="/how-it-works/"');
   pricingContent = pricingContent.replace(/href="\/song-inspiration"/g, 'href="/song-inspiration/"');
   pricingContent = pricingContent.replace(/href="\/pricing"/g, 'href="/pricing/"');
   pricingContent = pricingContent.replace(/href="\/login"/g, 'href="/login/"');
+  
+  // Add the main CSS to ensure consistent styling
+  if (mainCss) {
+    pricingContent = pricingContent.replace('</head>', `${mainCss}</head>`);
+  }
   
   // Write the modified content
   fs.writeFileSync(
@@ -153,6 +201,39 @@ if (fs.existsSync(path.join(srcDir, 'components', 'packages', 'index.html'))) {
   });
 }
 
+// Create placeholder pages for how-it-works and song-inspiration
+console.log('Creating placeholder pages for how-it-works and song-inspiration...');
+const placeholderPages = ['how-it-works', 'song-inspiration'];
+placeholderPages.forEach(page => {
+  const placeholderContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonata - ${page.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</title>
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/variables.css">
+  <link rel="stylesheet" href="/styles/global.css">
+  ${mainCss || ''}
+</head>
+<body>
+  ${headerTemplate || ''}
+  <div class="container" style="padding: 100px 20px; text-align: center;">
+    <h1 style="font-size: 32px; margin-bottom: 20px;">Coming Soon</h1>
+    <p style="font-size: 18px; margin-bottom: 30px;">We're working on this page. Please check back later.</p>
+    <a href="/" class="button button--primary">Return to Home</a>
+  </div>
+</body>
+</html>
+  `;
+  
+  fs.writeFileSync(
+    path.join(distDir, page, 'index.html'),
+    placeholderContent
+  );
+});
+
 // Copy global styles and scripts to ensure they're available
 console.log('Copying global styles and scripts...');
 fs.mkdirSync(path.join(distDir, 'styles'), { recursive: true });
@@ -176,7 +257,27 @@ if (fs.existsSync(path.join(srcDir, 'components', 'global', 'formStorage.js'))) 
   );
 }
 
-// Process HTML files
+// Fix all HTML files to ensure logo links to home and navigation is consistent
+console.log('Fixing navigation in all HTML files...');
+processDirectory(distDir, '.html', (filePath, content) => {
+  // Fix logo links to always point to home
+  content = content.replace(/<a href="[^"]*"(\s+class="(?:logo|header__logo)")>Sonata<\/a>/g, '<a href="/"$1>Sonata</a>');
+  content = content.replace(/<a href="[^"]*"(\s+class="(?:logo|header__logo)")>\s*<h1>Sonata<\/h1>\s*<\/a>/g, '<a href="/"$1><h1>Sonata</h1></a>');
+  
+  // Fix navigation links
+  content = content.replace(/href="\.\.\/how-it-works\/index\.html"/g, 'href="/how-it-works/"');
+  content = content.replace(/href="\.\.\/song-inspiration\/index\.html"/g, 'href="/song-inspiration/"');
+  content = content.replace(/href="\.\.\/packages\/index\.html"/g, 'href="/pricing/"');
+  content = content.replace(/href="\.\.\/account\/login-signup\/index\.html"/g, 'href="/login/"');
+  
+  // Fix relative paths to CSS and JS
+  content = content.replace(/href="\.\.\/\.\.\/styles\//g, 'href="/styles/');
+  content = content.replace(/src="\.\.\/\.\.\/scripts\//g, 'src="/scripts/');
+  
+  return content;
+});
+
+// Process HTML files for minification
 console.log('Processing HTML files...');
 processDirectory(distDir, '.html', (filePath, content) => {
   return htmlMinifier.minify(content, {
